@@ -5,37 +5,27 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import CardColoumns from "react-bootstrap/CardColumns";
-import Form from "react-bootstrap/Form";
 
 
 export const Home = () => {
     const [latest,setLatest] = useState([]);
-  const [country,setCountry] = useState([]);
-  const [searchCountry,setSearchCountry] = useState("");
 
   useEffect(
    () => {
-    axios
-      .all([
-        axios.get("https://corona.lmao.ninja/v2/all"),
-        axios.get("https://corona.lmao.ninja/v2/countries")
-    ])
+    axios.get("https://corona.lmao.ninja/v2/all")
       .then(res => {
-        setLatest(res[0].data);
-        setCountry(res[1].data);
+        setLatest(res.data);
       })
       .catch(err =>{
         console.log(err);
       })
-    },[]);
+    });
  
   const date = new Date(parseInt(latest.updated))
   const updatedate = date.toString(); 
 //   const searchResult = country.filter(item => {
 //     return searchCountry !== "" ? item.country.includes(searchCountry) :item;
 //   });
-
-  
 
   return (
   <div>
@@ -112,12 +102,8 @@ export const Home = () => {
     </Card.Footer>
   </Card>
 </CardDeck>
-<br/>
-<Form>
-  <Form.Group controlId="formGroupSearch">
-    <Form.Control type="text" placeholder="Search for a Country" onChange={e =>setSearchCountry(e.target.value)}/>
-  </Form.Group>
-</Form>
+
+
 </div>
     
   );

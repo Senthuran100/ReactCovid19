@@ -1,10 +1,10 @@
 import React from 'react';
 import { Home } from './components/Home'
 import { Countries } from './components/Countries'
-
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Search from './components/Search';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         </Navbar>
         <Route path="/home" exact component={Home} />
         <Route path="/countries" exact component={Countries} />
-        <Route path="/search" exact component={Home} />
+        <Route path="/search" exact component={Search} />
       </Router>
     </div>
   );

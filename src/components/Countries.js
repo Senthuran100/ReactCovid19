@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import CardColoumns from "react-bootstrap/CardColumns";
-
+import Form from "react-bootstrap/Form";
 
 
 export const Countries = () => {
     const [country, setCountry] = useState([]);
+    const [searchCountry, setSearchCountry] = useState("");
+
     useEffect(
         () => {
             axios
@@ -18,8 +20,11 @@ export const Countries = () => {
                 .catch(err => {
                     console.log(err);
                 })
-        });
-    const countrydata = country.map((data, x) => {
+        },[]);
+    const searchResult = country.filter(item => {
+        return searchCountry !== "" ? item.country.toLowerCase().includes(searchCountry.toLowerCase()) : item;
+    });
+    const countrydata = searchResult.map((data, x) => {
         return (
             <Card key={x} bg="danger" text="white" className="text-center">
                 <Card.Body>
@@ -37,6 +42,11 @@ export const Countries = () => {
     return (
         <div>
             <br />
+            <Form>
+                <Form.Group controlId="formGroupSearch">
+                    <Form.Control type="text" placeholder="Search for a Country" onChange={e => setSearchCountry(e.target.value)} />
+                </Form.Group>
+            </Form>
             <CardColoumns>{countrydata}</CardColoumns>
         </div>
     );
