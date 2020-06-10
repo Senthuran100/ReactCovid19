@@ -29,11 +29,11 @@ export const Countries = () => {
                 <Card.Body>
                     <Card.Title>{data.country}</Card.Title>
                     <Card.Img src={data.countryInfo.flag} />
-                    <Card.Text> Cases : {data.cases} </Card.Text>
-                    <Card.Text> Deaths : {data.deaths} </Card.Text>
-                    <Card.Text> Recovered : {data.recovered} </Card.Text>
-                    <Card.Text> Active : {data.active} </Card.Text>
-                    <Card.Text> Critical : {data.critical} </Card.Text>
+                    <Card.Text> Cases : {data.cases}   Deaths : {data.deaths}  Recovered : {data.recovered}</Card.Text>
+                    <br/>
+                    <Card.Text> Today Cases : {data.todayCases}  Today Deaths : {data.todayDeaths} Today Recovered : {data.todayRecovered}</Card.Text>
+                    <br/>
+                    <Card.Text> Active : {data.active} Critical : {data.critical}</Card.Text>
                 </Card.Body>
             </Card>
         );
@@ -43,7 +43,7 @@ export const Countries = () => {
             <br />
             <Form>
                 <Form.Group controlId="formGroupSearch">
-                    <Form.Control type="text" placeholder="Search for a Country" onChange={e => setSearchCountry(e.target.value)} />
+                    <Form.Control type="text" placeholder="Search For a Country" onChange={e => setSearchCountry(e.target.value)} />
                 </Form.Group>
             </Form>
             <CardColoumns>{countrydata}</CardColoumns>

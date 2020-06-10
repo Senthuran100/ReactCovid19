@@ -18,7 +18,7 @@ export const Home = () => {
                 .catch(err => {
                     console.log(err);
                 })
-        });
+        },[]);
 
     const date = new Date(parseInt(latest.updated))
     const updatedate = date.toString();
