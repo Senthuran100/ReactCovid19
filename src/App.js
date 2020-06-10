@@ -4,7 +4,6 @@ import { Countries } from './components/Countries'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Route, BrowserRouter as Router } from "react-router-dom";
-import Search from './components/Search';
 
 
 function App() {
@@ -17,13 +16,12 @@ function App() {
           <Nav className="mr-auto">
             <Nav.Link href="home"> Home </Nav.Link>
             <Nav.Link href="countries"> Countries </Nav.Link>
-            <Nav.Link href="search"> Search </Nav.Link>
           </Nav>
         </Navbar>
         <Route path="/home" exact component={Home} />
         <Route path="/countries" exact component={Countries} />
-        <Route path="/search" exact component={Search} />
       </Router>
+      
     </div>
   );
 }
