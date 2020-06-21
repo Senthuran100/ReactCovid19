@@ -1,7 +1,7 @@
 
 <b>Covid19 World Status</b>
 
-This is a Application to view the Covid19 Status in World Wide.
+This is an Application to view the Covid19 Status in World Wide.
 
 
 After Cloning the project please execute the below command.
