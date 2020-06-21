@@ -4,15 +4,12 @@
 This is a Application to view the Covid19 Status in World Wide.
 
 
-After Cloning the project please execute th below command.
+After Cloning the project please execute the below command.
 
 ### `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
 
 - Navigate to /home(http://localhost:3000/home) to get the overall numerical picture.
@@ -27,6 +24,9 @@ You will also see any lint errors in the console.
    <p align="center">
    <img src="src/images/image3.png" >
    </p>
+   <p align="center">
+   <img src="src/images/image4.png" >
+   </p>
 
 
 
@@ -37,5 +37,4 @@ You will also see any lint errors in the console.
 
 
 
-
-Please refer this <a href="https://corona.lmao.ninja/"> API </a> to get more numerical information about Covid19
+Please refer  <a href="https://corona.lmao.ninja/"> Novel COVID API </a> to get more numerical information about Covid19
